@@ -1,10 +1,20 @@
 .PHONY: clean
 
 clean:
-	rm -f data/unique_case.csv analysis1.html analysis2.html
+	rm -f data/distinct_case.csv data/unique_case.csv
+	rm -f logs/*
+	rm -f figures/*
 
-data/unique_case.csv: data/source_data.csv analysis1.Rmd
-	Rscript -e "rmarkdown::render('analysis1.Rmd')"
+logs/logs_output1.txt figures/plot1.png figures/plot2.png data/distinct_case.csv data/unique_case.csv: \
+  data/NYC_Dog_Licensing_Dataset_%.csv analysis1.R
+	Rscript analysis1.R $*
 
-analysis2.html: data/unique_case.csv analysis2.Rmd
-	Rscript -e "rmarkdown::render('analysis2.Rmd')"
+logs/logs_output2.txt figures/plot3: data/unique_case.csv analysis2.R
+	Rscript analysis2.R data/unique_case.csv
+
+report.html: report.Rmd logs/logs_output1.txt logs/logs_output2.txt figures/plot1.png figures/plot2.png figures/plot3
+	Rscript -e "rmarkdown::render('report.Rmd')"
+
+
+
+

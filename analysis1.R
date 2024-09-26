@@ -14,7 +14,7 @@ if (length(file_name) > 0) {
 }
 
 #### complete case ####
-log <- make_logger("logs/report.Rmd")
+log <- make_logger("logs/logs_output1.txt")
 n_data = nrow(data)
 complete_case <- data %>%
   mutate(across(everything(), ~str_replace_all(., "#VALUE!", NA_character_))) %>%

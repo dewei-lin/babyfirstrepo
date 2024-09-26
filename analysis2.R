@@ -20,9 +20,14 @@ most_popular_2023 <- joined_data %>%
   filter(birth_year== 2023) %>%
   slice(1)
 
-
+log <- make_logger("logs/logs_output2.txt")
 name_1 <- most_popular_1999$name
 name_2 <- most_popular_2023$name
+log("The most famous dog name is 2019 is %s, and %s for 2023",
+    name_1,
+    name_2)
+
+
 name_rate <- joined_data %>% 
   filter(name == most_popular_1999$name | name == most_popular_2023$name)
 

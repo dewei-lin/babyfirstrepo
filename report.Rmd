@@ -1,0 +1,53 @@
+---
+title: "report"
+author: "Dewei Lin"
+date: "2024-09-26"
+output: html_document
+---
+
+## Question 1
+
+```{r}
+message1 <- readLines("logs/logs_output1.txt")
+cat(message1[1], sep = "\n")
+```
+
+## Question 2
+
+```{r}
+cat(message1[2], sep = "\n")
+```
+
+## Question 3
+
+The first figure:
+
+```{r, echo = FALSE}
+knitr::include_graphics("figures/plot1.png")
+```
+
+The second figure:
+
+```{r, echo = FALSE}
+knitr::include_graphics("figures/plot2.png")
+```
+
+## Question 4
+
+```{r}
+cat(message1[3], sep = "\n")
+```
+
+
+## Question 5
+
+```{r}
+message2 <- readLines("logs/logs_output2.txt")
+cat(message2[1], sep = "\n")
+```
+
+## Question 6
+
+```{r, echo = FALSE}
+knitr::include_graphics("figures/plot3.png")
+```
