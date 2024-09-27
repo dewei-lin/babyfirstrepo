@@ -1,9 +1,14 @@
-cat <<EOF > README.md
-Example
+For this submission
 =======
 
-This is an example readme at the first commit.
+To build the R image:
 
-EOF
+docker build -t bios611-a3-image .
 
-git status
+To knit the file:
+
+docker run -v $(pwd):/usr/src/app -it bios611-a3-image
+
+The output:
+
+report.html
