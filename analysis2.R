@@ -1,4 +1,4 @@
-setwd("../BIOS611-A3")
+#setwd("../BIOS611-A3")
 unique_case <- read.csv("data/unique_case.csv")
 source("utils.R");
 
@@ -38,4 +38,4 @@ plot3 <- ggplot(name_rate, aes(x = birth_year, y = rate, color = name)) +
        x = "Year", y = "Popularity Rate") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) 
-ggsave(filename = "figures/plot3.png", plot = plot2, width = 6, height = 4)
+ggsave(filename = "figures/plot3.png", plot = plot3, width = 6, height = 4)

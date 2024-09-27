@@ -1,17 +1,11 @@
 #### Load data ####
-setwd("../BIOS611-A3")
+#setwd("../BIOS611-A3")
 source("utils.R")
 if (!dir.exists("logs")) {
   dir.create("logs")
 }
 ensure_directory("logs");
-file_name <- list.files(path = "data/", pattern = "NYC_Dog_Licensing_Dataset_\\d+\\.csv", full.names = TRUE)
-if (length(file_name) > 0) {
-  data <- read.csv(file_name)
-  print("File loaded successfully.")
-} else {
-  print("No matching file found.")
-}
+data <- read.csv("data/source_data.csv")
 
 #### complete case ####
 log <- make_logger("logs/logs_output1.txt")

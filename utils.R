@@ -1,15 +1,4 @@
-setwd("../BIOS611-A3")
-install_if_missing <- function(packages) {
-  missing_packages <- packages[!(packages %in% installed.packages()[,"Package"])]
-  if(length(missing_packages)) {
-    install.packages(missing_packages)
-  }
-  sapply(packages, require, character.only = TRUE)
-}
-
-packages <- c("rmarkdown", "ggplot2", "readr", "tidyverse")
-install_if_missing(packages)
-
+#setwd("../BIOS611-A3")
 library(rmarkdown)
 library(ggplot2)
 library(readr)
